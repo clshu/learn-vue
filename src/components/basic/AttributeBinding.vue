@@ -27,7 +27,7 @@ function toggleColor() {
   </p>
 </template>
 
-<style>
+<style scoped>
 .red {
   color: red;
 }

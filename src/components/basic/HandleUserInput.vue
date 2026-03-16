@@ -37,7 +37,7 @@ function notify() {
   <a href="https://vuejs.org" @click.prevent="notify"> A link with e.preventDefault() </a>
 </template>
 
-<style>
+<style scoped>
 button,
 a {
   display: block;
