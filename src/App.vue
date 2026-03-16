@@ -4,6 +4,7 @@ import HandleUserInput from './components/basic/HandleUserInput.vue'
 import AttributeBindings from './components/basic/AttributeBindings.vue'
 import ConditionalsAndLoops from './components/basic/ConditionalsAndLoops.vue'
 import FormBindings from './components/basic/FormBindings.vue'
+import SimpleComponent from './components/basic/SimpleComponent.vue'
 
 const componentName = ref('')
 const currentComponent = ref<Component | null>(null)
@@ -32,6 +33,10 @@ const basicComponents = [
   {
     name: 'FormBindings',
     component: FormBindings,
+  },
+  {
+    name: 'SimpleComponent',
+    component: SimpleComponent,
   },
 ]
 
