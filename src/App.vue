@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import HandleUserInput from './components/HandleUserInput.vue'
+import AttributeBinding from './components/AttributeBinding.vue'
 
 const message = ref('Hello World')
 const state = reactive({
@@ -24,6 +25,8 @@ const isButtonDisabled = ref(false)
   <p v-if="state.count === 3">Count is 3</p>
   <hr />
   <HandleUserInput />
+  <hr />
+  <AttributeBinding />
 </template>
 
 <style scoped></style>
