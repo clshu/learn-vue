@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import HandleUserInput from './components/basic/HandleUserInput.vue'
-import AttributeBinding from './components/basic/AttributeBinding.vue'
-import ConditionalAndLoops from './components/basic/ConditionalAndLoops.vue'
+import AttributeBindings from './components/basic/AttributeBindings.vue'
+import ConditionalsAndLoops from './components/basic/ConditionalsAndLoops.vue'
+import FormBindings from './components/basic/FormBindings.vue'
 
 const componentName = ref('')
 const currentComponent = ref<Component | null>(null)
@@ -21,21 +22,31 @@ const basicComponents = [
     component: HandleUserInput,
   },
   {
-    name: 'AttributeBinding',
-    component: AttributeBinding,
+    name: 'AttributeBindings',
+    component: AttributeBindings,
   },
   {
-    name: 'ConditionalAndLoops',
-    component: ConditionalAndLoops,
+    name: 'ConditionalsAndLoops',
+    component: ConditionalsAndLoops,
+  },
+  {
+    name: 'FormBindings',
+    component: FormBindings,
   },
 ]
 
-const findComponent = (category: string, name: string) => {
-  if (category === 'basic') {
-    return basicComponents.find((c) => c.name === name)?.component
-  } else {
-    return null
+const getComponents = (category: string) => {
+  switch (category) {
+    case 'basic':
+      return basicComponents
+    default:
+      return []
   }
+}
+
+const findComponent = (category: string, name: string) => {
+  const components = getComponents(category)
+  return components.find((c) => c.name === name)?.component
 }
 </script>
 
